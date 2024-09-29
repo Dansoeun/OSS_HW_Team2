@@ -4,6 +4,7 @@
 - 컴퓨터학부 글솝/2023012004/정솔빈/solempty
 - 전자공학부/2018113271/황재정 /JaeJeongHwang
 - 컴퓨터학부 인컴/2023012324/김세희/sei135
+- 컴퓨터학부 인컴/2023009887/김나현/Dansoeun
 
 ## 1. 개요
 - Meta에서 개발한 오픈 소스 자바스크립트 라이브러리입니다.
@@ -22,6 +23,34 @@ MIT 라이선스 (BSD 라이선스에 기반)
 2) 비동기 처리 및 DB 통신
 3) Router
 4) 유닛 테스트
+
+### React Design Pattern - 나현
+- __Presentational & Container Component Pattern__
+- __Presentational Component__
+  - 화면에 표시하는 것만 담당. props를 통해서 데이터나 콜백을 받아옴
+  - UI와 관련된 상태만 가짐 (대표 예시: dropdown 열림 여부)
+- __Container Component Pattern__
+  - 동작, data fetch 등의 business logic만을 담당
+  - Presentational Component에 보여줄 데이터를 가져오거나, 변화시키거나, 행동/동작 등을 정의
+  - DOM Markup이나 스타일(css) 없이, 연관이 있는 서브 컴포넌트를 렌더링
+  - stateful한 경향
+---
+- **Presentational Component**
+1. 보편적인 폴더 구조
+```
+components
+├── Login
+│   ├── LoginContainer.tsx
+│   ├── LoginPresentation.tsx
+│   └── Login.style.ts
+└── User
+    ├── UserContainer.tsx
+    ├── UserPresentation.tsx
+    └── User.style.ts
+...
+```
+
+2. 
 
 
 ### React의 핵심, 상태관리와 데이터 흐름 - 재정
