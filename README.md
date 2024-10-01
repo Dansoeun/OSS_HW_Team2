@@ -25,7 +25,7 @@ MIT 라이선스 (BSD 라이선스에 기반)
 4) 유닛 테스트
 
 ### React Design Pattern - 나현
-- __Presentational & Container Component Pattern__
+- __Presentational & Container Component Pattern & Atomic Design Pattern & VAC Pattern __
 - __Presentational Component__
   - 화면에 표시하는 것만 담당. props를 통해서 데이터나 콜백을 받아옴
   - UI와 관련된 상태만 가짐 (대표 예시: dropdown 열림 여부)
@@ -59,10 +59,74 @@ components
   - 불필요하게 맹목적으로 패턴을 강제하게 됨
   - hooks의 도입으로 로직 분리가 쉬워지고, 로직 또한 재사용할 수 있게 됨
 
+- **Component - Custom Hook**
+  - hooks의 도입 이후, Dan Abramov가 새롭게 제안한 방식이다.
+
+1. 보편적인 폴더 구조
+```
+components
+├── ui
+│   ├── atoms // 가장 작은 단위의 컴포넌트
+│   │   ├── Input
+│   │   └── Checkbox
+│   ├── molecules // atom을 여러 개 조합한 컴포넌트 
+│   │   └── LoginInputs
+│   └── organisms // molecule과 atom을 조합하여 만든 컴포넌트
+│       └── LoginComponent
+├── templates // 컴포넌트를 넣어 사용할 레이아웃
+│   ├── LoginTemplate
+│   ├── UserTemplate
+│   └── BookTemplate
+└── pages // 가장 큰 단위의, templates에 atom, molecule, organism 등을 주입한 컴포넌트
+    └── Login
+```
+
+#### 장점
+- UI에서 기능을 명확하게 분리함
+- 연관된 기능 단위로 묶어서 분리할 수 있으므로, 로직을 재사용할 수 있음
 
 
+- **Atomic Design Pattern**
+  - 2013년 Brad Frost에 의해 처음으로 제시되었다. 원래는 디자인 시스템을 위한 패턴이다.
+  - 디자인 시스템에서 컴포넌트를 효율적으로 구성하는 방식에 대한 내용이다.
+ 
+1. 보편적인 폴더 구조
+```
+components
+├── ui
+│   ├── atoms // 가장 작은 단위의 컴포넌트
+│   │   ├── Input
+│   │   └── Checkbox
+│   ├── molecules // atom을 여러 개 조합한 컴포넌트 
+│   │   └── LoginInputs
+│   └── organisms // molecule과 atom을 조합하여 만든 컴포넌트
+│       └── LoginComponent
+├── templates // 컴포넌트를 넣어 사용할 레이아웃
+│   ├── LoginTemplate
+│   ├── UserTemplate
+│   └── BookTemplate
+└── pages // 가장 큰 단위의, templates에 atom, molecule, organism 등을 주입한 컴포넌트
+    └── Login
+```
+#### 장점
+- 컴포넌트를 기능의 단위로 나누므로 UI 재사용성이 뛰어남
+- application과 분리하여 컴포넌트를 개발하고 테스트할 수 있음. 스타일 가이드 도구 사용이 용이.
+- 통합 개발 시 백엔드 로직에 의존하지 않음
+- 디자인을 일관성 있게 통일하기에 용이 (디자인 시스템 구축에 용이한 구조)
 
-2. 
+#### 단점
+- 디자인 시스템을 구축하기 위한 초기 비용이 필요
+  - 어디까지를 어느 단위로 볼 것인가에 대한 논의
+  - 최소 단위를 재사용하기 위한 디자인 시스템
+- 로직과 상태를 낮은 단위까지 공유해야 하기 때문에 props drilling issue 발생할 수 있음
+- 컴포넌트가 명확하게 분리되어 있으므로, 상위 컨테이너 컴포넌트의 사이즈를 모를 때 미디어쿼리를 사용하기 어려울 수 있음.
+
+- **VAC Pattern**
+- View Asset Component.
+- 기존의 View 컴포넌트에서 jsx와 관련된 영역을 props object로 추상화한 뒤, VAC로 분리해서 개발하는 방식
+- 비즈니스 로직 뿐 아니라 UI 로직에서도 렌더링 관심사를 명확하게 분리하는 것이 목적
+
+
 
 
 ### React의 핵심, 상태관리와 데이터 흐름 - 재정
