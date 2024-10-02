@@ -257,3 +257,12 @@ useMemo로 해당 내용을 감싸준 후 첫 번째 인수에 의존성 배열�
 
 #### UI
 UI는 버튼, 텍스트, 이미지와 같은 작은 요소로 구성되어 있습니다. React를 통해 작은 요소들을 재사용하고 중첩할 수 있는 컴포넌트로 조합할 수 있습니다. 여기서 웹사이트부터 휴대폰 앱에 이르기까지 화면에 있는 모든 것을 컴포넌트로 나눌 수 있습니다.
+
+#### 트리와 UI의 관계
+React는 서로 중첩된 많은 컴포넌트로 구성되어 있습니다. React와 많은 다른 UI 라이브러리는 UI를 트리로 모델링하며 애플리케이션을 트리고 생각함으로써 컴포넌트 간의 관계를 이해합니다.
+- 트리로서의 UI
+  - 트리는 요소와 UI 사이의 관계 모델
+  - UI는 종종 트리 구조를 사용하여 표현됨
+  - 예시
+    - 브라우저는 HTML([DOM](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model/Introduction))과 CSS([CSSOM](https://developer.mozilla.org/ko/docs/Web/API/CSS_Object_Model))을 모델링하기 위해 트리 구조 사용
+    - 모바일 플랫폼은 뷰 계층 구조를 나타내는 데 트리를 사
