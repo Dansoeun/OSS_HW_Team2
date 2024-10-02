@@ -20,11 +20,12 @@ MIT 라이선스 (BSD 라이선스에 기반)
 > [React](https://ko.react.dev/) 조사할 때 참고하세용 출처는 하이퍼링크로 달았습니다
 
 1) 컴포넌트 구조
-2) 비동기 처리 및 DB 통신
-3) Router
-4) 유닛 테스트
+2) React의 핵심, 상태관리와 데이터 흐름
+3) 리액트 도구, 테스트, 최적화
+4) UI/UX 및 네비게이션
 
-### React Design Pattern - 나현
+### 1. 컴포넌트 구조 - 나현
+### React Design Pattern
 - __Presentational & Container Component Pattern & Atomic Design Pattern & VAC Pattern __
 - __Presentational Component__
   - 화면에 표시하는 것만 담당. props를 통해서 데이터나 콜백을 받아옴
@@ -127,9 +128,7 @@ components
 - 비즈니스 로직 뿐 아니라 UI 로직에서도 렌더링 관심사를 명확하게 분리하는 것이 목적
 
 
-
-
-### React의 핵심, 상태관리와 데이터 흐름 - 재정
+### 2. React의 핵심, 상태관리와 데이터 흐름 - 재정
 #### 상태관리
 상태 관리의 용이성과 성능 최적화를 위해 상태관리 라이브러리를 사용할 수 있다. 
 
@@ -138,7 +137,7 @@ React의 개발 방식은 페이지 단위가 아닌 컴포넌트 단위로 시�
 이 방식은 테스트가 쉽고 확장성이 뛰어나다는 장점이 있다.
 
 ---
-### React의 도구와 테스트-솔빈
+### 3. 리액트 도구, 테스트, 최적화 - 솔빈
 #### 프로젝트 초기 설정 도구
 
 예전에는 [Webpack](https://webpack.kr/)이나 [Babel](https://babeljs.io/docs/) 같은 모듈을 설치하고 설정해야 리액트 앱을 시작 할 수 있었지만, 현재는 [CRA](https://create-react-app.dev/docs/getting-started)를 이용해 가장 빠르고 쉽게 리액트를 설치할 수 있습니다.
@@ -215,7 +214,8 @@ BBD 방법론에 울리며 간결하면서도 꼭 필요한 API를 지원합니�
 
 ---
 
-### Router - 세희
+### 4. UI/UX 및 네비게이션 - 세희
+### Router
 #### Routing
 사용자가 요청한 URL에 따라 해당 URL에 맞는 페이지를 보여주는 것이 ROUTING입니다. ROUTING과 관련된 수많은 라이브러리 중 사람들이 가장 많이 쓰는 라이브러리가 REACT ROUTER입니다. React Router는 SPA(Single Page Application)에서 페이지 간 탐색을 가능하게 하며, URL 구조에 따라 다른 컴포넌트를 렌더링해 UI를 동적으로 구성할 수 있습니다.
 
