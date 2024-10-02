@@ -265,4 +265,6 @@ React는 서로 중첩된 많은 컴포넌트로 구성되어 있습니다. Reac
   - UI는 종종 트리 구조를 사용하여 표현됨
   - 예시
     - 브라우저는 HTML([DOM](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model/Introduction))과 CSS([CSSOM](https://developer.mozilla.org/ko/docs/Web/API/CSS_Object_Model))을 모델링하기 위해 트리 구조 사용
-    - 모바일 플랫폼은 뷰 계층 구조를 나타내는 데 트리를 사
+    - 모바일 플랫폼은 뷰 계층 구조를 나타내는 데 트리를 사용
+브라우저와 모바일 플랫폼처럼 React도 React 앱의 컴포넌트 간의 관계를 관리하고 모델링하기 위해 트리 구조를 사용합니다. 트리는 React 앱에서 데이터가 흐르는 방식과 렌더링 및 앱 크기를 최적화하는 방법을 이해하는 데 유용한 도구입니다.
+![image](https://ko.react.dev/_next/image?url=%2Fimages%2Fdocs%2Fdiagrams%2Fpreserving_state_dom_tree.dark.png&w=1080&q=75)
