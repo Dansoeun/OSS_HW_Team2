@@ -178,13 +178,49 @@ class Welcome extends React.Component {
 #### 상태관리
  React는 구성 요소 상태를 관리하기 위한 내장 기능을 제공하여 사용자 입력 처리, 데이터 가져오기, 애플리케이션 상태 변경에 따른 사용자 인터페이스 업데이트 등을 쉽게 처리할 수 있습니다. 
  React의 상태 관리 시스템과 단방향 데이터 흐름은 사용자 인터페이스가 항상 기반 애플리케이션 상태와 일치하도록 보장합니다.
-#### 데이터 흐름
-React의 개발 방식은 페이지 단위가 아닌 컴포넌트 단위로 시작하며, 상향식(Bottom-Up)으로 앱을 만들어 가는 특징이 있습니다.
+#### 데이터 흐름(Data Flow) 
+
+React는 단방향 데이터 흐름을 사용하고 있습니다.
+즉, 데이터는 상위 컴포넌트에서 하위 컴포넌트로 흐릅니다.
+상태 관리를 단순화하고 애플리케이션의 예측가능성과 안정성을 향상시킵니다.
+
 이 방식은 테스트가 쉽고 확장성이 뛰어나다는 장점이 있습니다.
 
-또한,
-React는 구성 요소 간에 단방향 데이터 흐름을 강제하여 애플리케이션 내에서 데이터의 흐름을 이해하고 관리하기 쉽게 합니다. 이 단방향 데이터 흐름은 상태 관리를 단순화하고 애플리케이션의 예측 가능성과 안정성을 향상시킵니다.
+- Prop : 상위 컴포넌트에서 하위 컴포넌트로 데이터를 전달하기 위해 사용됩니다. 하위 컴포넌트는 props로 받은 데이터를 읽기만 할 수 있으며, 직접 변경할 수 없습니다.
 
+
+```
+  function ParentComponent() {
+    const [value, setValue] = useState("Hello");
+    return <ChildComponent message={value} />;
+}
+
+function ChildComponent({ message }) {
+    return <div>{message}</div>;
+}
+```
+
+- Lifting State Up: 여러 하위 컴포넌트가 동일한 데이터를 필요로 할 때, 상태를 가장 가까운 공통 상위(조상) 컴포넌트에서 관리합니다. 데이터의 일관성을 유지할 수 있습니다.
+
+- Context API : 상태를 여러 컴포넌트에 전역적으로 제공하고 싶을 때 사용할 수 있습니다. 이를 통해 props를 깊게 전달하지 않고도 데이터에 접근할 수 있습니다.
+
+```
+const MyContext = React.createContext();
+
+function App() {
+    return (
+        <MyContext.Provider value="Hello">
+            <Child />
+        </MyContext.Provider>
+    );
+}
+
+function Child() {
+    const value = useContext(MyContext);
+    return <div>{value}</div>;
+}
+
+```
 ---
 ### 3. 리액트 도구, 테스트, 최적화 - 솔빈
 #### 프로젝트 초기 설정 도구
