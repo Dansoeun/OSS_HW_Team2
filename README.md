@@ -175,9 +175,18 @@ class Welcome extends React.Component {
 
 ---
 ### 2. React의 핵심, 상태관리와 데이터 흐름 - 재정
-#### 상태관리
- React는 구성 요소 상태를 관리하기 위한 내장 기능을 제공하여 사용자 입력 처리, 데이터 가져오기, 애플리케이션 상태 변경에 따른 사용자 인터페이스 업데이트 등을 쉽게 처리할 수 있습니다. 
- React의 상태 관리 시스템과 단방향 데이터 흐름은 사용자 인터페이스가 항상 기반 애플리케이션 상태와 일치하도록 보장합니다.
+#### 상태관리 (State Management)
+ React는 구성 요소 상태를 관리하기 위한 내장 기능을 제공하여 사용자 입력 처리, 데이터 가져오기, 애플리케이션 상태 변경에 따른 사용자 인터페이스 업데이트 등을 쉽게 처리할 수 있습니다. 주로 다음 두 가지 방법으로 이루어집니다
+
+ - 로컬 상태(Local State): 각 컴포넌트에서 관리하는 상태로, 'useState' 훅을 사용하여 설정합니다.
+```
+const [count, setCount] = useState(0);
+```
+ - 전역 상태(Global State): 여러 컴포넌트에서 공유해야하는 상태로, 'useReducer' 훅이나 상태 관리 라이브러리(ex. Redux, MobX)를 사용해 관리할 수 있습니다.
+```
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+
 #### 데이터 흐름(Data Flow) 
 
 React는 단방향 데이터 흐름을 사용하고 있습니다.
