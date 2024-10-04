@@ -156,7 +156,7 @@ components
 - 비즈니스 로직 뿐 아니라 UI 로직에서도 렌더링 관심사를 명확하게 분리하는 것이 목적
 
 ---
-### 2. 함수 컴포넌트와 클래스 컴포넌트 - 나현
+### 1-2. [함수 컴포넌트와 클래스 컴포넌트, 컴포넌트와 Props](https://ko.legacy.reactjs.org/docs/components-and-props.html) - 나현
 1. 함수 컴포넌트
 ```
 function Welcome(props) {
@@ -172,6 +172,50 @@ class Welcome extends React.Component {
   }
 }
 ```
+
+3. 컴포넌트 합성
+```
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+function App() {
+  return (
+    <div>
+      <Welcome name="Sara" />
+      <Welcome name="Cahal" />
+      <Welcome name="Edite" />
+    </div>
+  );
+}
+```
+- 컴포넌트는 자신의 출력에 다른 컴포넌트를 참조할 수 있음.
+
+4. 컴포넌트 추출
+```
+function Comment(props) {
+  return (
+    <div className="Comment">
+      <div className="UserInfo">
+        <img className="Avatar"
+          src={props.author.avatarUrl}
+          alt={props.author.name}
+        />
+        <div className="UserInfo-name">
+          {props.author.name}
+        </div>
+      </div>
+      <div className="Comment-text">
+        {props.text}
+      </div>
+      <div className="Comment-date">
+        {formatDate(props.date)}
+      </div>
+    </div>
+  );
+}
+```
+- author(객체), text(문자열) 및 date(날짜)를 props로 받은 후 소셜 미디어 웹 사이트의 코멘트를 나타냄.
 
 ---
 ### 2. React의 핵심, 상태관리와 데이터 흐름 - 재정
