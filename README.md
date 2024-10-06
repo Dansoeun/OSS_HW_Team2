@@ -51,9 +51,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 2) React의 핵심, 상태관리와 데이터 흐름
 3) 리액트 도구, 테스트, 최적화
 4) UI/UX 및 네비게이션
-
-### 1-1. 컴포넌트 구조 - 나현
-### React Design Pattern
+### 1. 컴포넌트 구조 - 나현
+#### 1-1. 컴포넌트 구조
+#### React Design Pattern
 - __Presentational & Container Component Pattern & Atomic Design Pattern & VAC Pattern __
 - __Presentational Component__
   - 화면에 표시하는 것만 담당. props를 통해서 데이터나 콜백을 받아옴
@@ -64,7 +64,7 @@ OTHER DEALINGS IN THE SOFTWARE.
   - DOM Markup이나 스타일(css) 없이, 연관이 있는 서브 컴포넌트를 렌더링
   - stateful한 경향
 ---
-- ### **Presentational Component**
+- #### **Presentational Component**
 1. 보편적인 폴더 구조
 ```
 components
@@ -156,7 +156,7 @@ components
 - 비즈니스 로직 뿐 아니라 UI 로직에서도 렌더링 관심사를 명확하게 분리하는 것이 목적
 
 ---
-### 1-2. [함수 컴포넌트와 클래스 컴포넌트, 컴포넌트와 Props](https://ko.legacy.reactjs.org/docs/components-and-props.html) - 나현
+#### 1-2. [함수 컴포넌트와 클래스 컴포넌트, 컴포넌트와 Props](https://ko.legacy.reactjs.org/docs/components-and-props.html)
 1. 함수 컴포넌트
 ```
 function Welcome(props) {
