@@ -65,7 +65,7 @@ OTHER DEALINGS IN THE SOFTWARE.
   - stateful한 경향
 ---
 - #### **Presentational Component**
-1. 보편적인 폴더 구조
+- . 보편적인 폴더 구조
 ```
 components
 ├── Login
@@ -89,9 +89,9 @@ components
   - hooks의 도입으로 로직 분리가 쉬워지고, 로직 또한 재사용할 수 있게 됨
 
 -  ## **Component - Custom Hook**
-  - hooks의 도입 이후, Dan Abramov가 새롭게 제안한 방식이다.
+  - hooks의 도입 이후, Dan Abramov가 새롭게 제안한 방식.
 
-1. 보편적인 폴더 구조
+-. 보편적인 폴더 구조
 ```
 components
 ├── ui
@@ -116,10 +116,10 @@ components
 
 
 - ## **Atomic Design Pattern**
-  - 2013년 Brad Frost에 의해 처음으로 제시되었다. 원래는 디자인 시스템을 위한 패턴이다.
-  - 디자인 시스템에서 컴포넌트를 효율적으로 구성하는 방식에 대한 내용이다.
+  - 2013년 Brad Frost에 의해 처음으로 제시되었다. 원래는 디자인 시스템을 위한 패턴.
+  - 디자인 시스템에서 컴포넌트를 효율적으로 구성하는 방식에 대한 내용.
  
-1. 보편적인 폴더 구조
+-. 보편적인 폴더 구조
 ```
 components
 ├── ui
